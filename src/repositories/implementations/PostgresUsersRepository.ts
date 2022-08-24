@@ -6,6 +6,9 @@ export class PostgresUsersReposity implements IUsersRepository {
 
   async findByEmail(email: string): Promise<User> {
     const user = this.users.find((user) => user.email === email);
+    if (!user) {
+      throw new Error('User does not exists');
+    }
     return user;
   }
 
