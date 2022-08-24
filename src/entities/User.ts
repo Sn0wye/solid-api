@@ -1,4 +1,4 @@
-import { nanoid } from 'nanoid';
+import { v4 as uuid } from 'uuid';
 
 export class User {
   public readonly id: string;
@@ -12,6 +12,6 @@ export class User {
     this.name = props.name;
     this.email = props.email;
     this.password = props.password;
-    this.id = id || nanoid();
+    this.id = id || uuid();
   }
 }
