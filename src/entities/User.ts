@@ -8,10 +8,7 @@ export class User {
   public password: string;
 
   constructor(props: Omit<User, 'id'>, id?: string) {
-    // Object.assign(this, props);
-    this.name = props.name;
-    this.email = props.email;
-    this.password = props.password;
+    Object.assign(this, props);
     this.id = id || uuid();
   }
 }
